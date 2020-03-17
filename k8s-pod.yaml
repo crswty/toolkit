@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: toolkit
+  name: toolkit
+spec:
+  containers:
+  - image: crswty/toolkit:latest
+    name: toolkit
+    args:
+    - wait
