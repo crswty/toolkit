@@ -3,7 +3,12 @@
 COMMAND=${1:-run}
 
 run() {
-  /bin/bash
+  if [ -t 1 ]
+  then
+    /bin/bash
+  else
+    echo "Run command requires an interactive tty. If running with Docker/Kubernetes add the -it flag"
+  fi
 }
 
 k8s() {
