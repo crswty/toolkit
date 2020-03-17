@@ -11,8 +11,11 @@ k8s() {
 }
 
 waitforever() {
-  sleep infinity &
-  wait $!
+  while :
+  do
+    sleep 6000 &
+    wait $!
+  done
 }
 
 case "$COMMAND" in
