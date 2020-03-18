@@ -8,7 +8,9 @@ RUN apt-get install -y \
   less \
   curl \
   vim \
-  git
+  git \
+  iputils-ping \
+  dnsutils
 
 RUN wget https://github.com/fullstorydev/grpcurl/releases/download/v1.4.0/grpcurl_1.4.0_linux_x86_32.tar.gz -O grpcurl.tar.gz \
   && tar -xvf grpcurl.tar.gz \
