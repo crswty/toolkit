@@ -17,10 +17,7 @@ run() {
   then
     /bin/bash
   else
-    echo "ERR: Run command requires an interactive tty. If running with Docker/Kubernetes add the -it flag"
-    echo
-    help
-    exit 1
+    error "Run command requires an interactive tty. If running with Docker/Kubernetes add the -it flag"
   fi
 }
 
@@ -36,12 +33,19 @@ waitforever() {
   done
 }
 
+error() {
+  echo "ERR: $1"
+  echo
+  help
+  exit 1
+}
+
 case "$COMMAND" in
   wait) waitforever ;;
   run)  run ;;
   k8s)  k8s ;;
   help) help ;;
-  *) echo "ERR: Unknown command $COMMAND"; echo; help; exit 1
+  *) error "Unknown command $COMMAND"
 esac
 
 
