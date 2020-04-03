@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cat <<EOF
+Commands:
+  run - Run the container starting a new bash session
+  wait-forever - Start the container making it run forever
+  k8s - Print out a Kubernetes Pod resource that can be used to create a running toolkit in k8s
+  help - show the help
+EOF
+

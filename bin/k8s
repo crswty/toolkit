@@ -1,3 +1,6 @@
+#!/bin/sh
+
+cat << EOF
 apiVersion: v1
 kind: Pod
 metadata:
@@ -10,4 +13,5 @@ spec:
   - image: crswty/toolkit:latest
     name: toolkit
     args:
-    - wait
+    - wait-forever
+EOF

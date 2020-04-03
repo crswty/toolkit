@@ -21,9 +21,6 @@ RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.17.0/bin/l
 
 RUN rm -rf /workdir
 
-RUN mkdir /toolkit
-COPY entrypoint.sh /toolkit
-COPY k8s-pod.yaml /toolkit
+COPY ./bin/* /usr/local/bin/
 
 WORKDIR /root
-ENTRYPOINT ["/toolkit/entrypoint.sh"]
